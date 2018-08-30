@@ -1,0 +1,27 @@
+<!--
+
+    Copyright (c) 2015-2017 Red Hat, Inc.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+      Red Hat, Inc. - initial API and implementation
+
+-->
+<html>
+<head>
+  <title>oidcCallback</title>
+</head>
+<body>
+<script type="text/javascript">
+  var redirectUri = window.sessionStorage.getItem('oidcIdeRedirectUrl');
+  if (window.location.hash) {
+    redirectUri = redirectUri.substring(0, location.href.indexOf('#'));
+  }
+  redirectUri += (redirectUri.indexOf('?') == -1 ? '?' : '&') + window.location.search.substring(1);
+  window.location = redirectUri;
+</script>
+</body>
+</html>
