@@ -210,7 +210,7 @@
         }
 
         kc.login = function (options) {
-            options.redirectUri = 'oidcCallback.html';
+            options.redirectUri = 'https://raw.githubusercontent.com/davidfestal/support-fixed-redirect-uris-in-che/master/oidcCallback.html';
             window.sessionStorage.setItem('oidcDashboardRedirectUrl', window.location.href);
             return adapter.login(options);
         }
