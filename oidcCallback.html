@@ -16,7 +16,14 @@
 </head>
 <body>
 <script type="text/javascript">
-  var redirectUri = window.sessionStorage.getItem('oidcIdeRedirectUrl');
+  var referrer = document.referrer;
+  var redirectUriStorage;
+  if (referrer && referrer.includes('/dashboard')) {
+    redirectUriStorage = 'oidcDashboardRedirectUrl';
+  } else {
+    redirectUriStorage = 'oidcIdeRedirectUrl';
+  }
+  var redirectUri = window.sessionStorage.getItem(redirectUriStorage);
   if (window.location.hash) {
     redirectUri = redirectUri.substring(0, location.href.indexOf('#'));
   }
