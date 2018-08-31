@@ -210,7 +210,7 @@
         }
 
         kc.login = function (options) {
-            options.redirectUri = 'https://rawgit.com/davidfestal/support-fixed-redirect-uris-in-che/master/oidcCallback.html';
+            options.redirectUri = 'http://che-mini-che.192.168.42.23.nip.io/support-fixed-redirects/oidcCallback.html';
             window.sessionStorage.setItem('oidcDashboardRedirectUrl', window.location.href);
             return adapter.login(options);
         }
