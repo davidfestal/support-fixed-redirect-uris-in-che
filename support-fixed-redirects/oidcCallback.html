@@ -25,10 +25,7 @@
     redirectUriStorage = 'oidcIdeRedirectUrl';
   }
   var redirectUri = window.sessionStorage.getItem(redirectUriStorage);
-  if (window.location.hash) {
-    redirectUri = redirectUri.substring(0, location.href.indexOf('#'));
-  }
-  redirectUri += (redirectUri.indexOf('?') == -1 ? '?' : '&') + window.location.search.substring(1);
+  redirectUri += window.location.hash;
   window.location = redirectUri;
 </script>
 </body>

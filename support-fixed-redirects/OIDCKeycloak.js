@@ -210,8 +210,8 @@
         }
 
         kc.login = function (options) {
+            window.sessionStorage.setItem('oidcDashboardRedirectUrl', adapter.redirectUri({}));
             options.redirectUri = 'http://che-mini-che.192.168.42.23.nip.io/support-fixed-redirects/oidcCallback.html';
-            window.sessionStorage.setItem('oidcDashboardRedirectUrl', window.location.href);
             return adapter.login(options);
         }
 
