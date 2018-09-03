@@ -211,6 +211,7 @@
 
         kc.login = function (options) {
             window.sessionStorage.setItem('oidcDashboardRedirectUrl', adapter.redirectUri({}));
+            console.log('Storing session value for `oidcDashboardRedirectUrl`: ' + adapter.redirectUri({}));
             if (!options) {
               options = {};
             }
