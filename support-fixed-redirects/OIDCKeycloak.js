@@ -216,6 +216,7 @@
               options = {};
             }
             options.redirectUri = 'http://che-mini-che.192.168.42.23.nip.io/support-fixed-redirects/oidcCallback.html';
+            options.scope = 'email profile';
             return adapter.login(options);
         }
 
