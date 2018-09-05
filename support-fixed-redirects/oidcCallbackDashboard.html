@@ -13,21 +13,11 @@
 <html>
 <head>
   <title>oidcCallback</title>
+  <script type="text/javascript" src="./oidcCallback.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-  debugger;
-  var parameter = window.location.search;
-  if (parameter && parameter == '?ide=true') {
-    redirectUriStorage = 'oidcIdeRedirectUrl';
-  } else {
-    redirectUriStorage = 'oidcDashboardRedirectUrl';
-  }
-  var redirectUriStorage;
-  var redirectUri = window.sessionStorage.getItem(redirectUriStorage);
-  console.log('redirectUri in oidcCallback.html: ' + redirectUri);
-  redirectUri += window.location.hash;
-  window.location = redirectUri;
+  redirectToInitialPage(false);
 </script>
 </body>
 </html>
