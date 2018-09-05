@@ -16,13 +16,13 @@
 </head>
 <body>
 <script type="text/javascript">
-  var referrer = document.referrer;
-  var redirectUriStorage;
-  if (true || referrer && referrer.includes('/dashboard')) {
-    redirectUriStorage = 'oidcDashboardRedirectUrl';
-  } else {
+  var parameter = window.location.search;
+  if (parameter && parameter == '?ide') {
     redirectUriStorage = 'oidcIdeRedirectUrl';
+  } else {
+    redirectUriStorage = 'oidcDashboardRedirectUrl';
   }
+  var redirectUriStorage;
   var redirectUri = window.sessionStorage.getItem(redirectUriStorage);
   console.log('redirectUri in oidcCallback.html: ' + redirectUri);
   redirectUri += window.location.hash;
